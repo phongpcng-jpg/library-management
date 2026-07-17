@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "e576caec-b502-4fba-b6f5-8a61c3e9d9ff",
+    "name": "Library Management",
+    "description": "IOC-Session08: Library Management\n\ngithub: [https://github.com/phongpcng-jpg/library-management.git](https://github.com/phongpcng-jpg/library-management.git)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56296091"
+  },
+  "item": [
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Sin Eater",
+              "type": "text",
+              "uuid": "9e860450-1a80-4f91-bd95-4b78232a7ff2"
+            },
+            {
+              "key": "author",
+              "value": "Megan Campisi",
+              "type": "text",
+              "uuid": "04867dac-0a28-4a05-a4b8-e697668aa06f"
+            },
+            {
+              "key": "stock",
+              "value": "10",
+              "type": "text",
+              "uuid": "e420a277-8cd8-4111-8687-41fa98352043"
+            },
+            {
+              "key": "coverImage",
+              "type": "file",
+              "uuid": "382e75f3-6e58-4aff-9f88-2b50fd095b63",
+              "src": "/C:/Users/thomas.phong/Downloads/book_cover_01.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Page",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Sin Eater",
+              "type": "text",
+              "uuid": "9e860450-1a80-4f91-bd95-4b78232a7ff2"
+            },
+            {
+              "key": "author",
+              "value": "Megan Campisi",
+              "type": "text",
+              "uuid": "04867dac-0a28-4a05-a4b8-e697668aa06f"
+            },
+            {
+              "key": "stock",
+              "value": "10",
+              "type": "text",
+              "uuid": "e420a277-8cd8-4111-8687-41fa98352043"
+            },
+            {
+              "key": "coverImage",
+              "type": "file",
+              "uuid": "382e75f3-6e58-4aff-9f88-2b50fd095b63",
+              "src": "/C:/Users/thomas.phong/Downloads/book_cover_01.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
