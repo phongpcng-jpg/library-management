@@ -23,6 +23,51 @@
 ### 🛠️ Project Structure
 
 ```text
+com/example/library_management/
+    │
+    ├── 📦 configs/
+    │   ├── ☁️ CloudinaryConfig.java
+    │   └── 🔑 CloudinaryProperties.java
+    │
+    ├── 📦 exception/
+    │   ├── 🛡️ GlobalExceptionHandler.java
+    │   ├── 🚨 ResourceNotFoundException.java
+    │   └── 🚨 UploadCloudinaryMessage.java
+    │
+    ├── 📦 message/
+    │   ├── 🔒 BookMessage.java
+    │   ├── 🔒 UploadCloudinaryMessage.java
+    │   └── 🔒 CommonMessage.java
+    │
+    ├── 📦 utils/
+    │   └── 📦 validations/
+    │       ├── 📦 annotations/
+    │       │   └── 🏷️ FileExtension.java
+    │       └── 📦 handle/
+    │           └── ✅ FileExtensionValidator.java
+    │
+    ├── 📦 models/
+    │   ├── 📦 dtos/
+    │   │   ├── 📦 wrapper/
+    │   │   │   ├── 📨 ApiResponse.java
+    │   │   │   └── 📄 PageResponse.java
+    │   │   └── 📦 request/
+    │   │       └── 📋 BookCreateDTO.java
+    │   ├── 📦 entities/
+    │   │   └── 💾 Book.java
+    │   ├── 📦 repositories/
+    │   │   └── 🟤 IBookRepository.java
+    │   └── 📦 services/
+    │       ├── 📦 uploads/
+    │       │   └── 🟢 UploadService.java
+    │       ├── 📦 impl/
+    │       │   └── 🟢 BookServiceImpl.java
+    │       └── 🟤 IBookService.java
+    │
+    ├── 📦 controller/
+    │   └── 🟢 BookController.java
+    │
+    └── 🚀 LibraryManagementApplication.java
 
 ```
 
