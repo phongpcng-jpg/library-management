@@ -14,4 +14,10 @@ public final class BookMessage {
     public static final String COVER_IMAGE_EXTENSION = 
         "Tập tin ảnh bìa phải có đuôi '.jpg', '.png', '.jpeg'.";
 
+    public static final String CREATED = 
+        "Tạo sách thành công.";
+
+    public static final String GET_PAGE = 
+        "Lấy trang danh sách sách thành công.";
+
 }
