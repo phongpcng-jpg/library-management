@@ -1,10 +1,11 @@
 {
   "info": {
-    "_postman_id": "e576caec-b502-4fba-b6f5-8a61c3e9d9ff",
+    "_postman_id": "5865614d-b448-43ac-993d-e90a902df2f5",
     "name": "Library Management",
     "description": "IOC-Session08: Library Management\n\ngithub: [https://github.com/phongpcng-jpg/library-management.git](https://github.com/phongpcng-jpg/library-management.git)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "56296091"
+    "_exporter_id": "46424266",
+    "_collection_link": "https://go.postman.co/collection/46424266-5865614d-b448-43ac-993d-e90a902df2f5?source=collection_link"
   },
   "item": [
     {
@@ -37,7 +38,7 @@
               "key": "coverImage",
               "type": "file",
               "uuid": "382e75f3-6e58-4aff-9f88-2b50fd095b63",
-              "src": "/C:/Users/thomas.phong/Downloads/book_cover_01.jpg"
+              "src": "/C:/Users/USER/Downloads/book_cover01.jpg"
             }
           ]
         },
@@ -103,6 +104,36 @@
           "path": [
             "api",
             "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Book",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"stock\": 10\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books",
+            "1"
           ]
         }
       },
