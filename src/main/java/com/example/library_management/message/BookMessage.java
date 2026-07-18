@@ -20,4 +20,8 @@ public final class BookMessage {
     public static final String GET_PAGE = 
         "Lấy trang danh sách sách thành công.";
 
+    public static final String NOT_FOUND =
+        "Không tìm thấy sách.";
+    public static final String UPDATE =
+        "Cập nhật sách thành công.";
 }
