@@ -1,5 +1,8 @@
 package com.example.library_management.models.services.impl;
 
+import com.example.library_management.exception.ResourceNotFoundException;
+import com.example.library_management.message.BookMessage;
+import com.example.library_management.models.dtos.request.BookUpdateStockDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -74,6 +77,30 @@ public class BookServiceImpl implements IBookService{
         
         return bookRepository.save(book);
 
+    }
+
+    @Override
+    public Book updateBook(Long id, BookUpdateStockDTO dto) {
+
+        Book book = findBookById(id);
+
+        if (dto.getStock() != null) {
+            book.setStock(
+                    dto.getStock()
+            );
+        }
+
+        return bookRepository.save(book);
+    }
+
+    @Override
+    public Book findBookById(Long id) {
+        return bookRepository.findById(id)
+                .orElseThrow(
+                        () -> new ResourceNotFoundException(
+                                BookMessage.NOT_FOUND
+                        )
+                );
     }
 
 }
