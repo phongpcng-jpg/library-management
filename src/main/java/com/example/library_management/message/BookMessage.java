@@ -22,4 +22,6 @@ public final class BookMessage {
 
     public static final String NOT_FOUND =
         "Không tìm thấy sách.";
+    public static final String UPDATE =
+        "Cập nhật sách thành công.";
 }
