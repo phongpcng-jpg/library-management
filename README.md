@@ -51,6 +51,8 @@ com/example/library_management/
     │   │   ├── 📦 wrapper/
     │   │   │   ├── 📨 ApiResponse.java
     │   │   │   └── 📄 PageResponse.java
+    │   │   ├── 📦 response/
+    │   │   │   └── 📋 ErrorResponse.java
     │   │   └── 📦 request/
     │   │       ├── 📋 BookUpdateStockDTO.java
     │   │       └── 📋 BookCreateDTO.java
