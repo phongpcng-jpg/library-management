@@ -1,11 +1,10 @@
 {
   "info": {
-    "_postman_id": "5865614d-b448-43ac-993d-e90a902df2f5",
+    "_postman_id": "839964c4-5d0e-418a-a1b1-8d9d26cd7abe",
     "name": "Library Management",
     "description": "IOC-Session08: Library Management\n\ngithub: [https://github.com/phongpcng-jpg/library-management.git](https://github.com/phongpcng-jpg/library-management.git)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "46424266",
-    "_collection_link": "https://go.postman.co/collection/46424266-5865614d-b448-43ac-993d-e90a902df2f5?source=collection_link"
+    "_exporter_id": "56296091"
   },
   "item": [
     {
@@ -122,6 +121,59 @@
               "language": "json"
             }
           }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Book",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Sin Eater",
+              "type": "text",
+              "uuid": "9e860450-1a80-4f91-bd95-4b78232a7ff2"
+            },
+            {
+              "key": "author",
+              "value": "Megan Campisi",
+              "type": "text",
+              "uuid": "04867dac-0a28-4a05-a4b8-e697668aa06f"
+            },
+            {
+              "key": "stock",
+              "value": "10",
+              "type": "text",
+              "uuid": "e420a277-8cd8-4111-8687-41fa98352043"
+            },
+            {
+              "key": "coverImage",
+              "type": "file",
+              "uuid": "382e75f3-6e58-4aff-9f88-2b50fd095b63",
+              "src": "/C:/Users/USER/Downloads/book_cover01.jpg"
+            }
+          ]
         },
         "url": {
           "raw": "http://localhost:8080/api/books/1",

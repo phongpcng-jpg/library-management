@@ -69,7 +69,7 @@ public class BookController {
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<Book>> updateBook(
 
-        @PathVariable Long id,
+        @PathVariable(name = "id") Long id,
 
         @Valid @RequestBody BookUpdateStockDTO request
 
@@ -82,6 +82,22 @@ public class BookController {
         return ResponseEntity.ok(
                 ApiResponse.success(
                         BookMessage.UPDATE,
+                        response
+                )
+        );
+
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiResponse<Book>> getBookById(
+        @PathVariable(name = "id") Long id
+    ) {
+
+        Book response = bookService.findBookById(id);
+
+        return ResponseEntity.ok(
+                ApiResponse.success(
+                        BookMessage.GET_BOOK,
                         response
                 )
         );

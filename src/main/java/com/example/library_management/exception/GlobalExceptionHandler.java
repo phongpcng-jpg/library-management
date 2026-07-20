@@ -11,45 +11,58 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.example.library_management.message.CommonMessage;
-import com.example.library_management.models.dtos.wrapper.ApiResponse;
+import com.example.library_management.models.dtos.response.ErrorResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiResponse<Void>> handleException(
+    public ResponseEntity<ErrorResponse<String>> handleException(
             Exception ex
     ) {
 
         return ResponseEntity.internalServerError()
-                .body(ApiResponse.fail(
-                    CommonMessage.EXCEPTION_HANDLE
-                ));
+                .body(
+                    ErrorResponse.<String>builder()
+                            .status(500)
+                            .message(CommonMessage.EXCEPTION_HANDLE)
+                            .build()
+                );
 
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ApiResponse<Void>> handleNotFound(
+    public ResponseEntity<ErrorResponse<String>> handleNotFound(
             ResourceNotFoundException ex
     ) {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(ApiResponse.fail(ex.getMessage()));
+                .body(
+                    ErrorResponse.<String>builder()
+                            .status(404)
+                            .message(ex.getMessage())
+                            .build()
+                );
 
     }
 
     @ExceptionHandler(UploadCloudinaryException.class)
-    public ResponseEntity<ApiResponse<Void>> handleUploadCloudinaryFail(
+    public ResponseEntity<ErrorResponse<String>> handleUploadCloudinaryFail(
         UploadCloudinaryException ex
     ) {
 
         return ResponseEntity.status(HttpStatus.BAD_GATEWAY)
-                .body(ApiResponse.fail(ex.getMessage()));
+                .body(
+                    ErrorResponse.<String>builder()
+                            .status(502)
+                            .message(ex.getMessage())
+                            .build()
+                );
 
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ApiResponse<Map<String, String>>> handleValidationExceptions(
+    public ResponseEntity<ErrorResponse<Map<String, String>>> handleValidationExceptions(
             MethodArgumentNotValidException ex
     ) {
 
@@ -71,10 +84,12 @@ public class GlobalExceptionHandler {
         });
 
         return ResponseEntity.badRequest()
-                .body(ApiResponse.fail(
-                    CommonMessage.DATA_BINDING_EXCEPTION,
-                    errorDetailMap
-                ));
+                .body(
+                    ErrorResponse.<Map<String, String>>builder()
+                            .status(400)
+                            .message(errorDetailMap)
+                            .build()
+                );
     }
 
 }
