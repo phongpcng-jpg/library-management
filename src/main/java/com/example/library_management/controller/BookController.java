@@ -69,7 +69,7 @@ public class BookController {
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<Book>> updateBook(
 
-        @PathVariable Long id,
+        @PathVariable(name = "id") Long id,
 
         @Valid @RequestBody BookUpdateStockDTO request
 
@@ -90,7 +90,7 @@ public class BookController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse<Book>> getBookById(
-        @PathVariable Long id
+        @PathVariable(name = "id") Long id
     ) {
 
         Book response = bookService.findBookById(id);
