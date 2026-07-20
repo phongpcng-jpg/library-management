@@ -88,4 +88,20 @@ public class BookController {
 
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiResponse<Book>> getBookById(
+        @PathVariable Long id
+    ) {
+
+        Book response = bookService.findBookById(id);
+
+        return ResponseEntity.ok(
+                ApiResponse.success(
+                        BookMessage.GET_BOOK,
+                        response
+                )
+        );
+
+    }
+
 }
